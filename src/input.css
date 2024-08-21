@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.primarycolor{
+    @apply  bg-[#B3DF01];
+}
+
+.secondcolor{
+    @apply  text-[#3C3C3C];
+}
+
+.thirdcolor{
+    @apply text-[#888888];
+}
+
+.offwhite{
+   @apply bg-[#F1F1F1]; 
+}
+
