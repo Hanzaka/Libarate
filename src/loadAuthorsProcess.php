@@ -1,6 +1,6 @@
 <!-- Header Row -->
 <div class="p-4 bg-[#F1F1F1] text-[#3C3C3C] font-semibold font-outfit rounded-tl-[10px] rounded-bl-[10px] mb-[14px]">
-    Authors</div>
+    Author</div>
 
 <div class="p-4 bg-[#F1F1F1] text-[#3C3C3C] font-semibold font-outfit rounded-tr-[10px] rounded-br-[10px] mb-[14px]">
     Book Count</div>
