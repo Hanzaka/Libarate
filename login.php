@@ -44,7 +44,7 @@
             <div class="flex flex-col items-center">
                 <button class="w-[350px] h-[56px] primarycolor font-black text-[20px] secondcolor rounded-[10px] mt-[120px] hover:bg-[#c0e52c]"
                  onclick="adminLogIn()">Login</button>
-                <a href="#" class="thirdcolor text-[12px] font-normal mt-[28px] font-outfit">Forgot password ? Reset now</a>
+                <!-- <a href="#" class="thirdcolor text-[12px] font-normal mt-[28px] font-outfit">Forgot password ? Reset now</a> -->
             </div>
             
         </div>
