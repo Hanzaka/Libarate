@@ -19,7 +19,7 @@ if(empty($username)){
         $_SESSION["admin"] = $data;
         echo "Success";
     }else{
-        echo "Invalid Email or Password";
+        echo "Invalid Username or Password";
     }
 
 }
