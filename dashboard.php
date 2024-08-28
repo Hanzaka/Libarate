@@ -213,6 +213,13 @@ if (isset($_SESSION["admin"])) {
 
             </div>
 
+            <!-- Reports -->
+            <div class="flex gap-[30px]">
+                <div class="bg-[#F1F1F1] h-[199px] mt-[24px] rounded-[10px]">
+
+                </div>
+            </div>
+
         </div>
         </div>
 
