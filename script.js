@@ -404,3 +404,27 @@ function updateUser() {
   request.send(form);
 
 }
+
+function userLogIn(){
+  var username = document.getElementById("username");
+  var password = document.getElementById("password");
+
+  var form = new FormData();
+  form.append("username", username.value);
+  form.append("password", password.value);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      if (response == "Success") {
+        window.location = "userDashboard.php";
+      } else {
+        alert(response);
+      }
+    }
+  }
+
+  request.open("POST", "userLogInProcess.php", true);
+  request.send(form);
+}
