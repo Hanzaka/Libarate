@@ -407,6 +407,3 @@ function updateUser() {
   request.send(form);
 
 }
-
-
-
