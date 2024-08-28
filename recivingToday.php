@@ -64,14 +64,26 @@ include "connection.php";
                 </div>
 
                 <?php
-                if ($row["return_date"] < $currentDate && $row["status_id"] == 1) {
+
+                $returnDate = $row["return_date"];
+                $statusId = $row["status_id"];
+
+                if ($returnDate < $currentDate && $statusId == 1) {
+
+                    $overdueDays = (strtotime($currentDate) - strtotime($returnDate)) / 86400; // 86400 seconds in a day
+                    $fine = $overdueDays * 20;
                     ?>
-                    <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit font-bold text-[#df2b2bde]">Rs.100.00</div>
+                    <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit font-bold text-[#df2b2bde]">
+                        Rs.<?php echo number_format($fine, 2); ?>
+                    </div>
                     <?php
+
+                    Database::iud("UPDATE `brrow` SET `fine`='$fine' WHERE `id`='" . $row["id"] . "' ");
                 } else {
                     ?>
                     <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit text-[#3C3C3C]">No Fine</div>
                     <?php
+
                     Database::iud("UPDATE `brrow` SET `fine`='0' WHERE `id`='" . $row["id"] . "' ");
                 }
                 ?>

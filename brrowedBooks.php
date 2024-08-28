@@ -108,18 +108,6 @@ include "connection.php";
                                 </div>
 
                                 <div class="flex flex-col">
-                                    <label for="" class="font-outfit text-[#3C3C3C]">Fine</label>
-                                    <div class="mt-[8px]">
-                                        <input type="text" placeholder="Rs." id="fine"
-                                            class="h-[50px] w-[312px] offwhite rounded-[10px]  pl-[13px] thirdcolor focus:outline-none">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Row 2 -->
-                            <div class="flex gap-[97px] mt-[18px]">
-                                <div class="flex flex-col">
                                     <label for="" class="font-outfit text-[#3C3C3C]">Brrowed Date</label>
                                     <div class="mt-[8px]">
                                         <input type="date" id="brrowedDate"
@@ -127,6 +115,11 @@ include "connection.php";
                                     </div>
                                 </div>
 
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div class="flex gap-[97px] mt-[18px]">
+                                
                                 <div class="flex flex-col">
                                     <label for="" class="font-outfit text-[#3C3C3C]">Return Date</label>
                                     <div class="mt-[8px]">
@@ -135,8 +128,8 @@ include "connection.php";
                                     </div>
                                 </div>
 
-
                             </div>
+                            
                             <div class="flex flex-col ml-[410px]">
                                 <button onclick="brrowBook();"
                                     class="w-[312px] h-[44px] primarycolor font-semibold text-[14px] secondcolor rounded-[10px] mt-[30px] hover:bg-[#c0e52c]">

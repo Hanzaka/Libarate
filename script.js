@@ -208,14 +208,12 @@ function brrowBook() {
 
   var bookId = document.getElementById("bookId");
   var userId = document.getElementById("userId");
-  var fine = document.getElementById("fine");
   var brrowedDate = document.getElementById("brrowedDate");
   var returnDate = document.getElementById("returnDate");
 
   var form = new FormData();
   form.append("bookId", bookId.value);
   form.append("userId", userId.value);
-  form.append("fine", fine.value);
   form.append("brrowedDate", brrowedDate.value);
   form.append("returnDate", returnDate.value);
 
@@ -228,7 +226,6 @@ function brrowBook() {
         window.location.reload();
         document.getElementById("bookId").value = '';
         document.getElementById("userId").value = '';
-        document.getElementById("fine").value = '';
         document.getElementById("brrowedDate").value = '';
         document.getElementById("returnDate").value = '';
       } else {

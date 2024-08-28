@@ -28,22 +28,32 @@ for ($x = 0; $x < $numOfRows; $x++) {
 
     <?php
     $currentDate = date("Y-m-d");
-    if ($row["return_date"] < $currentDate && $row["status_id"] == 1) {
+    $returnDate = $row["return_date"];
+    $statusId = $row["status_id"];
+
+    if ($returnDate < $currentDate && $statusId == 1) {
+
+        $overdueDays = (strtotime($currentDate) - strtotime($returnDate)) / 86400; // 86400 seconds in a day
+        $fine = $overdueDays * 20;
         ?>
-        <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit font-bold text-[#df2b2bde]">Rs.100.00</div>
+        <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit font-bold text-[#df2b2bde]">Rs.<?php echo number_format($fine, 2); ?>
+        </div>
         <?php
+
+        Database::iud("UPDATE `brrow` SET `fine`='$fine' WHERE `id`='" . $row["id"] . "' ");
     } else {
         ?>
         <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit text-[#3C3C3C]">No Fine</div>
         <?php
-        Database::iud("UPDATE `brrow` SET `fine`='0' WHERE `id`='".$row["id"]."' ");
+
+        Database::iud("UPDATE `brrow` SET `fine`='0' WHERE `id`='" . $row["id"] . "' ");
     }
     ?>
     <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit text-[#3C3C3C]"><?php echo ($row["brrow_date"]); ?></div>
     <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit text-[#3C3C3C]"><?php echo ($row["return_date"]); ?></div>
     <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit text-[#3C3C3C]">
         <div>
-            <button onclick="changeBrrowStatus(<?php echo ($row['id']); ?>);" 
+            <button onclick="changeBrrowStatus(<?php echo ($row['id']); ?>);"
                 class="w-[120px] px-[13px] py-[5px] rounded-[10px] font-semibold text-[#00508a] bg-[#90ccfd] ">
                 RETURNED
             </button>
