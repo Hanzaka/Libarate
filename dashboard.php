@@ -214,13 +214,20 @@ if (isset($_SESSION["admin"])) {
             </div>
 
             <!-- Reports -->
-            <div class="flex gap-[30px]">
-                <div class="bg-[#F1F1F1] h-[199px] mt-[24px] rounded-[10px]">
-
+            <div class=" gap-[30px] mt-10 ">
+                <div class="flex justify-between bg-[#F1F1F1] w-[100%] rounded-[10px] mb-5 h-[70px]">
+                    <div class="thirdcolor pl-6 mt-[25px]">
+                        Reports
+                    </div>
+                    <a href="report.php">
+                        <button
+                            class="text-[#FFFFFF] bg-[#3C3C3C] mr-5 w-[200px] h-[40px] rounded-[10px] mt-[15px] font-outfit text-[14px] hover:bg-[#2e2e2e]">
+                            View Report
+                        </button>
+                    </a>
                 </div>
             </div>
 
-        </div>
         </div>
 
         <script src="script.js"></script>
