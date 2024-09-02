@@ -329,7 +329,6 @@ function loadCategory() {
 
   request.open("GET", "loadCategoryProcess.php", true);
   request.send();
-
 }
 
 function filterBooks() {
@@ -487,7 +486,7 @@ function userBorrowRequest(bookName, categoryName, authorname, publisherName, us
   request.send(formData);
 }
 
-function cancelBorrow(userID){
+function cancelBorrow(userID) {
   var formData = new FormData();
   formData.append("userID", userID);
 
@@ -504,5 +503,50 @@ function cancelBorrow(userID){
   };
 
   request.open("POST", "cancelBorrowProcess.php", true);
+  request.send(formData);
+}
+
+function borrowRequestsByUser() {
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      document.getElementById("content").innerHTML = response;
+    }
+  }
+
+  request.open("GET", "loadBorrowRequestsByUserProcess.php", true);
+  request.send();
+}
+
+
+function acceptBorrowRequest(bookId, categoryId, authorId, publisherId, brrowDate, userId) {
+
+  var url = "brrowedBooks.php?bookId=" + encodeURIComponent(bookId) +
+    "&categoryId=" + encodeURIComponent(categoryId) +
+    "&authorId=" + encodeURIComponent(authorId) +
+    "&publisherId=" + encodeURIComponent(publisherId) +
+    "&brrowDate=" + encodeURIComponent(brrowDate) +
+    "&userId=" + encodeURIComponent(userId);
+
+  window.location.href = url;
+
+  var formData = new FormData();
+  formData.append("userId", userId);
+  formData.append("bookId", bookId);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      if (response == "Success") {
+        window.borrowRequest.php.reload();
+      }else{
+        alert(response);
+      }
+    }
+  }
+
+  request.open("POST", "deleteBorrowRequestsByUserProcess.php", true);
   request.send(formData);
 }
