@@ -27,6 +27,11 @@ function logout() {
   window.location = "login.php";
 }
 
+function Userlogout() {
+  localStorage.clear();
+  window.location = "userLogin.php";
+}
+
 function createUser() {
 
   var id = document.getElementById("id");
@@ -405,7 +410,7 @@ function updateUser() {
 
 }
 
-function userLogIn(){
+function userLogIn() {
   var username = document.getElementById("username");
   var password = document.getElementById("password");
 
@@ -427,4 +432,77 @@ function userLogIn(){
 
   request.open("POST", "userLogInProcess.php", true);
   request.send(form);
+}
+
+function UserfilterBooks() {
+  var categorySelect = document.getElementById("categorySelect");
+  var authorSelect = document.getElementById("authorSelect");
+  var publisherSelect = document.getElementById("publisherSelect");
+  var nameSort = document.getElementById("nameSort");
+
+  var form = new FormData();
+  form.append("categorySelect", categorySelect.value);
+  form.append("authorSelect", authorSelect.value);
+  form.append("publisherSelect", publisherSelect.value);
+  form.append("nameSort", nameSort.value);
+  form.append("userId", userId);  // Use the userId variable
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      document.getElementById("content").innerHTML = response;
+      document.getElementById("categorySelect").value = '0';
+      document.getElementById("authorSelect").value = '0';
+      document.getElementById("publisherSelect").value = '0';
+    }
+  }
+  request.open("POST", "loadUserBookProcess.php", true);
+  request.send(form);
+}
+
+
+function userBorrowRequest(bookName, categoryName, authorname, publisherName, userID) {
+  var formData = new FormData();
+  formData.append("bookName", bookName);
+  formData.append("categoryName", categoryName);
+  formData.append("authorName", authorname);
+  formData.append("publisherName", publisherName);
+  formData.append("userID", userID);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      var response = request.responseText;
+      if (response === "Success") {
+        alert("Book Borrow");
+        window.location.reload();
+      } else {
+        alert(response);
+      }
+    }
+  };
+
+  request.open("POST", "userBorrowRequestProcess.php", true);
+  request.send(formData);
+}
+
+function cancelBorrow(userID){
+  var formData = new FormData();
+  formData.append("userID", userID);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      var response = request.responseText;
+      if (response === "Success") {
+        window.location.reload();
+      } else {
+        alert(response);
+      }
+    }
+  };
+
+  request.open("POST", "cancelBorrowProcess.php", true);
+  request.send(formData);
 }
