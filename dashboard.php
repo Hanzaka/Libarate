@@ -217,7 +217,7 @@ if (isset($_SESSION["admin"])) {
             <div class=" gap-[30px] mt-10 ">
                 <div class="flex justify-between bg-[#F1F1F1] w-[100%] rounded-[10px] mb-5 h-[70px]">
                     <div class="thirdcolor pl-6 mt-[25px]">
-                        Reports
+                        Boook Report
                     </div>
                     <a href="report.php">
                         <button
