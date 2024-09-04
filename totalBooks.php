@@ -180,7 +180,7 @@ include "connection.php";
                             <!-- Row 1 -->
                             <div class="flex gap-[97px]">
                                 <div class="flex flex-col">
-                                    <label for="" class="font-outfit text-[#3C3C3C]">BookcName</label>
+                                    <label for="" class="font-outfit text-[#3C3C3C]">Book Name</label>
                                     <div class="mt-[8px]">
                                         <input type="text" placeholder="Enter book name" id="nameSort" onkeypress="filterBooks();"
                                             class="h-[40px] w-[312px] offwhite rounded-[10px]  pl-[13px] pr-[35px] thirdcolor focus:outline-none">
