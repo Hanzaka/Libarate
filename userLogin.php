@@ -28,7 +28,7 @@
             <div>
                 <label for="" class="font-outfit">Username</label>
                 <div class="mt-[8px]">
-                    <input id="username" type="text" placeholder="Enter your username"
+                    <input id="username" type="text" placeholder="Enter your username" onkeypress="userEnterPress(event);"
                         class="h-[50px] w-[445px] offwhite rounded-[10px] font-outfit pl-[13px] thirdcolor focus:outline-none">
                 </div>
             </div>
@@ -36,7 +36,7 @@
             <div class="mt-[38px]">
                 <label for="" class="font-outfit">Password</label>
                 <div class="mt-[8px]">
-                    <input id="password" type="password" placeholder="Enter your password"
+                    <input id="password" type="password" placeholder="Enter your password" onkeypress="userEnterPress(event);"
                         class="h-[50px] w-[445px] offwhite rounded-[10px]  pl-[13px] thirdcolor focus:outline-none">
                 </div>
             </div>

@@ -22,6 +22,13 @@ function adminLogIn() {
   request.send(form);
 }
 
+function adminEnterPress(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    adminLogIn();
+  }
+}
+
 function logout() {
   localStorage.clear();
   window.location = "login.php";
@@ -433,6 +440,13 @@ function userLogIn() {
   request.send(form);
 }
 
+function userEnterPress(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    userLogIn();
+  }
+}
+
 function UserfilterBooks() {
   var categorySelect = document.getElementById("categorySelect");
   var authorSelect = document.getElementById("authorSelect");
@@ -541,7 +555,7 @@ function acceptBorrowRequest(bookId, categoryId, authorId, publisherId, brrowDat
       var response = request.responseText;
       if (response == "Success") {
         window.borrowRequest.php.reload();
-      }else{
+      } else {
         alert(response);
       }
     }
