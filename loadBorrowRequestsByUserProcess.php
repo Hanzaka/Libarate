@@ -16,7 +16,7 @@ include "connection.php";
 
 <?php
 
-$resultSet = Database::search("SELECT * FROM `borrow_request`  ORDER BY `borrow_date` DESC");
+$resultSet = Database::search("SELECT * FROM `borrow_request`");
 $numOfRows = $resultSet->num_rows;
 
 for ($x = 0; $x < $numOfRows; $x++) {
@@ -33,7 +33,7 @@ for ($x = 0; $x < $numOfRows; $x++) {
     <div class="p-4 bg-[#F7F7F7] mb-[8px] font-outfit text-[#3C3C3C]"><?php echo ($row["borrow_date"]); ?></div>
     <div class="p-4 bg-[#F7F7F7] mb-[8px] rounded-tr-[10px] rounded-br-[10px] font-outfit text-[#3C3C3C]">
         <button
-            onclick="acceptBorrowRequest('<?php echo addslashes($row['id']); ?>', '<?php echo addslashes($row['category_id']); ?>', '<?php echo addslashes($row['author_id']); ?>', '<?php echo addslashes($row['publisher_id']); ?>', '<?php echo addslashes($row['borrow_date']); ?>','<?php echo addslashes($row['user_id']); ?>');"
+            onclick="acceptBorrowRequest('<?php echo addslashes($row['id']); ?>','<?php echo addslashes($row['book_id']); ?>', '<?php echo addslashes($row['category_id']); ?>', '<?php echo addslashes($row['author_id']); ?>', '<?php echo addslashes($row['publisher_id']); ?>', '<?php echo addslashes($row['borrow_date']); ?>','<?php echo addslashes($row['user_id']); ?>');"
             class="w-[120px] px-[13px] text-center py-[5px] rounded-[10px] font-semibold text-[#398a00] bg-[#bdfd90] ">
             Accept
         </button>

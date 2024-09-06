@@ -526,9 +526,9 @@ function borrowRequestsByUser() {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
       document.getElementById("content").innerHTML = response;
-      setInterval(function () {
-        window.location.reload();
-      }, 3500); // Reload after 3 Seconds
+      // setInterval(function () {
+      //   window.location.reload();
+      // }, 3500); // Reload after 3 Seconds
     }
   }
 
@@ -537,7 +537,7 @@ function borrowRequestsByUser() {
 }
 
 
-function acceptBorrowRequest(bookId, categoryId, authorId, publisherId, brrowDate, userId) {
+function acceptBorrowRequest(id,bookId, categoryId, authorId, publisherId, brrowDate, userId) {
 
   var url = "brrowedBooks.php?bookId=" + encodeURIComponent(bookId) +
     "&categoryId=" + encodeURIComponent(categoryId) +
@@ -550,7 +550,7 @@ function acceptBorrowRequest(bookId, categoryId, authorId, publisherId, brrowDat
 
   var formData = new FormData();
   formData.append("userId", userId);
-  formData.append("bookId", bookId);
+  formData.append("id", id);
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
