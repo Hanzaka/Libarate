@@ -16,7 +16,7 @@ include "connection.php";
 
 <?php
 
-$resultSet = Database::search("SELECT * FROM `borrow_request`");
+$resultSet = Database::search("SELECT * FROM `borrow_request`  ORDER BY `borrow_date` DESC");
 $numOfRows = $resultSet->num_rows;
 
 for ($x = 0; $x < $numOfRows; $x++) {
