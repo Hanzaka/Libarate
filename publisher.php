@@ -27,7 +27,7 @@ include "connection.php";
 
         <?php include "header.php"; ?>
         <div class="thirdcolor">
-            <a href="dashboard.php" class=" font-outfit text-[16px]"> Dashboard</a> / <label>Authors</label>
+            <a href="dashboard.php" class=" font-outfit text-[16px]"> Dashboard</a> / <label>Publishers</label>
         </div>
 
         <div class="flex">

@@ -159,57 +159,21 @@ $userId = isset($_GET['userId']) ? $_GET['userId'] : '';
 
                 <!-- Sort Books -->
                 <div>
-                    <div class="w-[1210px] h-[225px] bg-[#F7F7F7] rounded-[10px] mt-[45px]">
+                    <div class=" rounded-[10px] mt-[45px]">
                         <div class="pt-[21px]">
-                            <label class="font-outfit font-semibold secondcolor ml-[21px]">Sort Book</label>
-                        </div>
-                        <div class="mt-[10px] ml-[40px]">
-                            <!-- Row 1 -->
-                            <div class="flex gap-[97px]">
-                                <div class="flex flex-col">
-                                    <label for="" class="font-outfit text-[#3C3C3C]">Book ID</label>
-
-                                    <div class="mt-[8px]">
-                                        <input type="text" placeholder="Enter book ID"
-                                            class="h-[40px] w-[312px] offwhite rounded-[10px]  pl-[13px] pr-[35px] thirdcolor focus:outline-none">
-                                    </div>
-                                </div>
-
-                                <div class="flex flex-col">
-                                    <label for="" class="font-outfit text-[#3C3C3C]">User ID</label>
-                                    <div class="flex flex-row">
-
-                                        <div class="mt-[8px]">
-                                            <input type="text" placeholder="Enter user ID"
-                                                class="h-[40px] w-[312px] offwhite rounded-[10px]  pl-[13px] pr-[34px] thirdcolor focus:outline-none">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="flex flex-col">
-                                    <label for="" class="font-outfit text-[#3C3C3C]">Return Date</label>
-                                    <div class="mt-[8px]">
-                                        <input type="date"
-                                            class="h-[40px] w-[312px] offwhite rounded-[10px]  pl-[13px] pr-3 thirdcolor focus:outline-none">
-                                    </div>
-                                </div>
-
-                            </div>
-
+                            <label class="font-outfit font-semibold secondcolor ">View Book</label>
                             <!-- Row 2 -->
                             <div class="flex gap-[97px] mt-[10px]">
 
-                                <div class="flex flex-col">
+                                <div class="flex flex-col ">
                                     <a href="recivingToday.php">
                                         <button
-                                            class="w-[312px] h-[44px] primarycolor font-semibold text-[14px] secondcolor rounded-[10px] mt-[15px] hover:bg-[#c0e52c]">
+                                            class="w-[312px] h-[44px] primarycolor font-semibold text-[14px] secondcolor rounded-[10px] mt-[5px] hover:bg-[#c0e52c]">
                                             Books Reciving Today
                                         </button>
                                     </a>
                                 </div>
-
                             </div>
-
                         </div>
 
                     </div>
