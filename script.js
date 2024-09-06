@@ -526,6 +526,9 @@ function borrowRequestsByUser() {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
       document.getElementById("content").innerHTML = response;
+      setInterval(function () {
+        window.location.reload();
+      }, 3500); // Reload after 3 Seconds
     }
   }
 
